@@ -6,9 +6,11 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
-class User extends Authenticatable
+class Admin extends Authenticatable
 {
     use Notifiable;
+
+    protected $guard = 'admin';
 
     /**
      * The attributes that are mass assignable.
@@ -19,9 +21,7 @@ class User extends Authenticatable
         'name', 
         'email', 
         'password',
-        'address',
-        'phone',
-        'secret_token_code',
+        'image',
     ];
 
     /**
@@ -41,4 +41,8 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function sendPasswordResetNotification($token) {
+        $this->notify(new AdminResetPasswordNotification($token));
+    }
 }
