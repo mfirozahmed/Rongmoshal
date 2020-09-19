@@ -48,7 +48,7 @@
                             </a>
                         </div>
                         <div class="login-form">
-                            <form action="#" method="post">
+                            <form action="{{ route('admin.login.submit') }}" method="post">
                                 @csrf
                                 <div class="form-group">
                                     <label>Email Address</label>
