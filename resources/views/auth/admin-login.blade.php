@@ -52,7 +52,7 @@
                                     </label>
                                     <label>
                                         @if (Route::has('password.request'))
-                                        <a href="#">Forgotten Password?</a>
+                                        <a href="{{ route('admin.password.request') }}">Forgotten Password?</a>
                                         @endif
                                     </label>
                                 </div>
