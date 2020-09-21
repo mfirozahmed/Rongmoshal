@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
+use App\Code;
 use Session;
 use Auth;
 
@@ -43,8 +44,8 @@ class LoginController extends Controller
 
     public function showLoginForm()
     {
-        //$data = Code::categoryList();
-        return view('auth.login');//->with($data);
+        $data = Code::categoryList();
+        return view('auth.login')->with($data);
     }
 
     public function login(Request $request)

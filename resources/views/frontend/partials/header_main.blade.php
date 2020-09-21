@@ -1,8 +1,8 @@
 <!-- Logo -->
 <div class="logo">
-    <a href="{{ route('home') }}"><img src="{{ asset('img/logo/logo1.png') }}" alt="" height="100px" width="200px"></a>
+    <a href="{{ route('home') }}"><img src="{{ asset('frontend/img/logo/logo1.png') }}" alt="" height="100px"
+            width="200px"></a>
 </div>
-
 <!-- Main-menu -->
 <div class="main-menu d-none d-lg-block">
     <nav>
