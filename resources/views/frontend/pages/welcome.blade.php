@@ -1,4 +1,4 @@
-@extends('layouts.user')
+@extends('frontend.user')
 
 @section('styles')
 
@@ -10,7 +10,7 @@
 @endsection
 
 @section('content')
-@include('partials.message')
+@include('frontend.partials.message')
 <div class="slider-area ">
     <div class="slider-active">
         <!-- Single Slider -->
