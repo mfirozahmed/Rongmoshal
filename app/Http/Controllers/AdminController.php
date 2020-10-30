@@ -3,6 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
+use App\Models\Product;
+use App\Code;
+use App\User;
+use App\Models\Order;
+use App\Models\Category;
+use Image;
+use Session;
 
 class AdminController extends Controller
 {

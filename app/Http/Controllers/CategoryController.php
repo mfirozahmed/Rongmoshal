@@ -29,14 +29,14 @@ class CategoryController extends Controller
             'sub_categories' => $sub_categories,
             'sub_sub_categories' => $sub_sub_categories,
         ];
-        return view('admin.categories')->with($data);
+        return view('backend.admin.categories')->with($data);
     }
 
     public function category_add($type)
     {
         $main_categories = Category::where('main', 0)->get();
 
-        return view('admin.category_add')->with('type', $type)->with('main_categories', $main_categories);
+        return view('backend.admin.category_add')->with('type', $type)->with('main_categories', $main_categories);
     }
 
     public function category_fetch(Request $request)
@@ -165,7 +165,7 @@ class CategoryController extends Controller
             $sub_sub_categories = null;
         }
             
-        return view('admin.category_edit')->with('category', $category)->with('type', $type)->with('sub_categories', $sub_categories)
+        return view('backend.admin.category_edit')->with('category', $category)->with('type', $type)->with('sub_categories', $sub_categories)
                 ->with('sub_sub_categories', $sub_sub_categories);
     }
 
@@ -173,7 +173,7 @@ class CategoryController extends Controller
     {
         return $id;
         $categories = Category::all();
-        return view('admin.categories')->with('categories', $categories);
+        return view('backend.admin.categories')->with('categories', $categories);
     }
 
     public function category_delete(Request $request)

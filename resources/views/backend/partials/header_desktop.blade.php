@@ -4,7 +4,7 @@
         <div class="header3-wrap">
             <div class="header__logo">
                 <a href="{{ route('admin.dashboard') }}">
-                    <img src="{{ asset('img/logo/logo2.png') }}" alt="RongMoshal" width="160px" />
+                    <img src="{{ asset('backend/images/logo2.png') }}" alt="RongMoshal" width="160px" />
                 </a>
             </div>
             <div class="header__navbar">

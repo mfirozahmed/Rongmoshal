@@ -185,7 +185,7 @@
                     </div>
                     <div class="table-responsive table-responsive-data2">
                         <table class="table table-data2" style="text-align: center" id="orderTable">
-                            @include('admin.fetch_data')
+                            @include('backend.admin.fetch_data')
                         </table>
                     </div>
                 </div>
