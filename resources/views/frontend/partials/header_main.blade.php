@@ -10,6 +10,7 @@
             <li><a href="{{ route('home') }}">Home</a></li>
             <li><a href="{{ route('shop') }}">Shop</a></li>
             <li><a href="{{ route('shop') }}">Categories</a>
+                @if (count($main_categories) > 0)
                 <ul class="submenu">
                     @foreach ($main_categories as $main_category)
                     <li><a href="{{ route('category', $main_category->name) }}">{{ $main_category->name }}</a>
@@ -35,6 +36,7 @@
                     </li>
                     @endforeach
                 </ul>
+                @endif
             </li>
             <li><a href="{{ route('about') }}">About</a></li>
             <li><a href="{{ route('contact') }}">Contact</a></li>

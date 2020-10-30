@@ -22,7 +22,7 @@
             <div class="row">
                 <div class="col-lg-8" style="padding-left: 80px">
                     <h3>Please fill up all the information</h3>
-                    @include('inc.message')
+                    @include('frontend.partials.message')
                     <form class="row contact_form" action="{{ route('register') }}" method="post">
                         @csrf
                         <div class="col-md-12 form-group p_star">
