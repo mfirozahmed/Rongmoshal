@@ -9,8 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 class Cart extends Model
 {
     public $fillable = [
-        'user_id',
-        'user_ip',
+        'user_id', 
         'product_id',
         'order_id',
         'quantity',
@@ -37,7 +36,7 @@ class Cart extends Model
                          ->where('order_id', null)
                          ->get();
         } else 
-            $carts = Cart::where('user_id', request()->ip())
+            $carts = Cart::where('user_ip', request()->ip())
                          ->where('order_id', null)
                          ->get();
 

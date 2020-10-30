@@ -1,4 +1,4 @@
-@extends('layouts.user')
+@extends('frontend.user')
 
 @section('styles')
 <style>
@@ -68,10 +68,8 @@
     </div>
     <!--================Cart Area =================-->
     <section class="cart_area section_padding">
-
-
         <div class="container">
-            @include('partials.message')
+            @include('frontend.partials.message')
             <div class="cart_inner">
                 <div class="table-responsive">
                     <form method="POST" action="{{ route('cart.update') }}">

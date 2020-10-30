@@ -24,7 +24,7 @@
                 <h2 class="contact-title">Get in Touch</h2>
             </div>
             <div class="col-lg-8">
-                @include('partials.message')
+                @include('frontend.partials.message')
                 <form class="form-contact contact_form" action="{{ route('contact.submit') }}" method="post">
                     @csrf
                     <div class="row">

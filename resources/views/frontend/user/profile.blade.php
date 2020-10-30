@@ -1,4 +1,4 @@
-@extends('layouts.user')
+@extends('frontend.user')
 
 @section('content')
 
