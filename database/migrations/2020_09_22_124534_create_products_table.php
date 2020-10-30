@@ -23,7 +23,7 @@ class CreateProductsTable extends Migration
             $table->tinyInteger('value');
             $table->string('image');
             $table->text('description');
-            
+            $table->tinyInteger('has_value')->nullable();
             $table->timestamps();
         });
     }
