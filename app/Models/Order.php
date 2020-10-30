@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Cart;
@@ -9,6 +9,7 @@ class Order extends Model
 {
     public $fillable = [
         'user_id',
+        'user_ip',
         'secret_token_code',
         'quantity',
         'price',

@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Models\ProductCategory;
@@ -13,7 +13,8 @@ class Product extends Model
         'price', 
         'image',
         'description',
-        'status'
+        'status',
+        'has_value'
     ];
 
     public function category($id) {

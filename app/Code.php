@@ -4,8 +4,9 @@ namespace App;
 use Auth;
 use App\Code;
 use App\User;
-use App\Product;
-use App\Order;
+use App\Models\Product;
+use App\Models\Order;
+use App\Models\Category;
 
 class Code
 {

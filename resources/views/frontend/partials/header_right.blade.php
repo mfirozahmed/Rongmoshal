@@ -23,7 +23,7 @@
             <a href="{{ route('cart') }}">
                 <span class="flaticon-shopping-cart"></span>
                 <span class='badge badge-warning' id='lblCartCount'>
-                    {{ App\Cart::totalItems() }} </span>
+                    {{ App\Models\Cart::totalItems() }} </span>
             </a>
         </li>
         @else
