@@ -4,10 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
-use App\Product;
+use App\Models\Product;
 use App\Code;
-use App\Category;
-use App\ProductCategory;
+use App\Models\Category;
+use App\Models\ProductCategory;
 use Image;
 use Session;
 

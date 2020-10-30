@@ -8,12 +8,12 @@ use Illuminate\Support\Collection;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Session;
 use App\Code;
-use App\Product;
-use App\Message;
-use App\Cart;
-use App\Category;
-use App\Order;
-use App\ProductCategory;
+use App\Models\Product;
+use App\Models\Message;
+use App\Models\Cart;
+use App\Models\Category;
+use App\Models\Order;
+use App\Models\ProductCategory;
 
 class PageController extends Controller
 {

@@ -6,8 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\URL;
 use Auth;
 use App\User;
-use App\Cart;
-use App\Order;
+use App\Models\Cart;
+use App\Models\Order;
 use App\Code;
 
 class CartController extends Controller
