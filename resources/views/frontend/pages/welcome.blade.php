@@ -21,9 +21,7 @@
                         <div class="hero__caption">
                             <h1 data-animation="fadeInLeft" data-delay=".4s" data-duration="2000ms">Select Your New
                                 Perfect Style</h1>
-                            <p data-animation="fadeInLeft" data-delay=".7s" data-duration="2000ms">Ut enim ad minim
-                                veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                                consequat is aute irure.</p>
+                            <p data-animation="fadeInLeft" data-delay=".7s" data-duration="2000ms">###</p>
                             <!-- Hero-btn -->
                             <div class="hero__btn" data-animation="fadeInLeft" data-delay=".8s" data-duration="2000ms">
                                 <a href="{{ route('shop') }}" class="btn hero-btn">Shop Now</a>
@@ -32,7 +30,7 @@
                     </div>
                     <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4 d-none d-sm-block">
                         <div class="hero__img" data-animation="bounceIn" data-delay=".4s">
-                            <img src="assets/img/hero/watch.png" alt="" class=" heartbeat">
+                            <img src="{{ asset('frontend/img/hero/test.png') }}" alt="" class=" heartbeat">
                         </div>
                     </div>
                 </div>
@@ -46,9 +44,7 @@
                         <div class="hero__caption">
                             <h1 data-animation="fadeInLeft" data-delay=".4s" data-duration="2000ms">Select Your New
                                 Perfect Style</h1>
-                            <p data-animation="fadeInLeft" data-delay=".7s" data-duration="2000ms">Ut enim ad minim
-                                veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                                consequat is aute irure.</p>
+                            <p data-animation="fadeInLeft" data-delay=".7s" data-duration="2000ms">###</p>
                             <!-- Hero-btn -->
                             <div class="hero__btn" data-animation="fadeInLeft" data-delay=".8s" data-duration="2000ms">
                                 <a href="industries.html" class="btn hero-btn">Shop Now</a>
@@ -57,7 +53,7 @@
                     </div>
                     <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4 d-none d-sm-block">
                         <div class="hero__img" data-animation="bounceIn" data-delay=".4s">
-                            <img src="assets/img/hero/watch.png" alt="" class=" heartbeat">
+                            <img src="{{ asset('frontend/img/hero/test.png') }}" alt="" class=" heartbeat">
                         </div>
                     </div>
                 </div>
@@ -101,13 +97,13 @@
         <div class="row">
             <div class="col-xl-6 col-lg-4 col-md-6 col-sm-6">
                 <div class="single-gallery mb-30">
-                    <div class="gallery-img big-img" style="background-image: url(assets/img/gallery/gallery1.png);">
+                    <div class="gallery-img big-img" style="background-image: url(./frontend/img/hero/test1.jpeg);">
                     </div>
                 </div>
             </div>
             <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
                 <div class="single-gallery mb-30">
-                    <div class="gallery-img big-img" style="background-image: url(assets/img/gallery/gallery2.png);">
+                    <div class="gallery-img big-img" style="background-image: url(./frontend/img/hero/test2.jpeg);">
                     </div>
                 </div>
             </div>
@@ -116,13 +112,13 @@
                     <div class="col-xl-12 col-lg-12 col-md-6 col-sm-6">
                         <div class="single-gallery mb-30">
                             <div class="gallery-img small-img"
-                                style="background-image: url(assets/img/gallery/gallery3.png);"></div>
+                                style="background-image: url(./frontend/img/hero/test3.jpeg);"></div>
                         </div>
                     </div>
                     <div class="col-xl-12 col-lg-12  col-md-6 col-sm-6">
                         <div class="single-gallery mb-30">
                             <div class="gallery-img small-img"
-                                style="background-image: url(assets/img/gallery/gallery4.png);"></div>
+                                style="background-image: url(./frontend/img/hero/test4.jpeg);"></div>
                         </div>
                     </div>
                 </div>
@@ -140,8 +136,7 @@
             <div class="col-xl-7 col-lg-8 col-md-10">
                 <div class="section-tittle mb-70 text-center">
                     <h2>Signature Items</h2>
-                    <p>Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                        Quis ipsum suspendisse ultrices gravida.</p>
+                    <p>##</p>
                 </div>
             </div>
         </div>
@@ -185,21 +180,21 @@
                     <div class="single-method mb-40">
                         <i class="ti-package"></i>
                         <h6>Free Shipping Method</h6>
-                        <p>aorem ixpsacdolor sit ameasecur adipisicing elitsf edasd.</p>
+                        <p></p>
                     </div>
                 </div>
                 <div class="col-xl-4 col-lg-4 col-md-6">
                     <div class="single-method mb-40">
                         <i class="ti-unlock"></i>
                         <h6>Secure Payment System</h6>
-                        <p>aorem ixpsacdolor sit ameasecur adipisicing elitsf edasd.</p>
+                        <p></p>
                     </div>
                 </div>
                 <div class="col-xl-4 col-lg-4 col-md-6">
                     <div class="single-method mb-40">
                         <i class="ti-reload"></i>
                         <h6>Secure Home Delivery System</h6>
-                        <p>aorem ixpsacdolor sit ameasecur adipisicing elitsf edasd.</p>
+                        <p></p>
                     </div>
                 </div>
             </div>
@@ -210,7 +205,7 @@
 
 @section('scripts')
 
-<script src="{{ asset('js/jquery-3.5.1.min.js') }}"></script>
+<script src="{{ asset('frontend/js/jquery-3.5.1.min.js') }}"></script>
 
 <!-- JavaScript -->
 <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>

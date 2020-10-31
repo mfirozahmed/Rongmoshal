@@ -23,7 +23,7 @@
             <div class="billing_details">
                 <div class="row">
                     <div class="col-lg-8">
-                        @include('partials.message')
+                        @include('frontend.partials.message')
                         <form class="row contact_form" action="{{ route('user.profile.submit') }}" method="post">
                             @csrf
                             <div class="col-md-4 form-group p_star" style="color:#415094">Name</div>
@@ -65,7 +65,7 @@
                     </div>
                     <div class="col-lg-4">
                         <div class="order_box" style="background: #ffff; padding-left: 100px; padding-top: 100px">
-                            <img src="/storage/images/profile.png" height="350px" width="350px">
+                            <img src="{{ asset('frontend/img/profile.png') }}" height="350px" width="350px">
                         </div>
                     </div>
 

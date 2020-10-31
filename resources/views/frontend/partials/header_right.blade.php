@@ -45,7 +45,7 @@
 
                 <form id="logout-form" action="{{ route('user.logout') }}" style="display: none;">
                     @csrf
-                    <input type="hidden" name="id" value="{{ App\User::encryptId(Auth::user()->id) }}" />
+
                 </form>
             </div>
         </li>
@@ -53,7 +53,7 @@
             <a href="{{ route('cart') }}">
                 <span class="flaticon-shopping-cart"></span>
                 <span class='badge badge-warning' id='lblCartCount'>
-                    {{ App\Cart::totalItems() }} </span>
+                    {{ App\Models\Cart::totalItems() }} </span>
             </a>
         </li>
         @endguest

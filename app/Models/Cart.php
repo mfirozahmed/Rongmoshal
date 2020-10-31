@@ -2,6 +2,7 @@
 
 namespace App\Models;
 use App\Models\Product;
+use App\User;
 use Auth;
 
 use Illuminate\Database\Eloquent\Model;

@@ -8,14 +8,12 @@
                         <div class="single-footer-caption mb-30">
                             <!-- logo -->
                             <div class="footer-logo">
-                                <a href="{{ route('admin.dashboard')}}"><img
-                                        src="{{ asset('img/logo/logo2_footer.png') }}" alt="" height="35px"
-                                        width="120px"></a>
+                                <a href="{{ route('home')}}"><img src="{{ asset('frontend/img/logo/logo1.png') }}"
+                                        alt="" height="100px" width="180px"></a>
                             </div>
                             <div class="footer-tittle">
                                 <div class="footer-pera">
-                                    <p>Asorem ipsum adipolor sdit amet, consectetur adipisicing elitcf sed do
-                                        eiusmod tem.</p>
+
                                 </div>
                             </div>
                         </div>
@@ -26,10 +24,9 @@
                         <div class="footer-tittle">
                             <h4>Quick Links</h4>
                             <ul>
-                                <li><a href="#">About</a></li>
-                                <li><a href="#"> Offers & Discounts</a></li>
-                                <li><a href="#"> Get Coupon</a></li>
-                                <li><a href="#"> Contact Us</a></li>
+                                <li><a href="{{ route('about') }}">About</a></li>
+                                <li><a href="{{ route('home') }}"> Get Coupon</a></li>
+                                <li><a href="{{ route('contact') }}"> Contact Us</a></li>
                             </ul>
                         </div>
                     </div>
@@ -80,9 +77,7 @@
                         <!-- social -->
                         <div class="footer-social">
                             <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="https://www.facebook.com/sai4ull"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#"><i class="fab fa-behance"></i></a>
-                            <a href="#"><i class="fas fa-globe"></i></a>
+                            <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
                         </div>
                     </div>
                 </div>

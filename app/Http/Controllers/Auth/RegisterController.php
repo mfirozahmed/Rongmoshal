@@ -30,7 +30,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.
@@ -60,7 +60,16 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'phone' => ['required', 'string', 'size:11'],
+            'address' => ['required', 'string', 'max:255']
+        ],[
+            'name.required' => 'Enter your name please.',
+            'email.required' => 'Enter a valid email. Already a user? Log in please.',
+            'password.required' => 'Enter a valid password please.',
+            'address.required' => 'Enter your address please.',
+            'phone.required' => 'Enter a valid phone number please.',
         ]);
+        
     }
 
     /**
@@ -71,10 +80,22 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        $code = bin2hex(random_bytes('8'));
+        while (true) {
+            $user_code = User::where('secret_token_code', $code)->first();
+            if (is_null($user_code)) {
+                break;
+            }
+            $code = bin2hex(random_bytes('8'));
+        }
+        
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'address' => $data['address'],
+            'phone' => $data['phone'],
+            'secret_token_code' => $code,
         ]);
     }
 }
