@@ -4,9 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Hash;
 use App\Models\Product;
 use App\Code;
 use App\User;
+use App\Admin;
+use Auth;
 use App\Models\Order;
 use App\Models\Category;
 use Image;
@@ -22,6 +25,68 @@ class AdminController extends Controller
     public function __construct()
     {
         $this->middleware('auth:admin');
+    }
+
+    public function profile()
+    {
+        if (Auth::check()) {
+            $token_user = Admin::find(Auth::user()->id);
+            return view('backend.admin.profile')->with('token_user', $token_user);
+        }
+        
+        Session::flash('error', 'Unauthorised Access Detected!');
+        return redirect()->route('home');
+    }
+
+    public function profile_update()
+    {
+        if (Auth::check()) {
+            $token_user = Admin::find(Auth::user()->id);
+            return view('backend.admin.profile_update')->with('token_user', $token_user);
+        }
+
+        Session::flash('error', 'Unauthorised Access Detected!');
+        return redirect()->route('home');
+    }
+
+    public function profile_submit(Request $request)
+    {
+        $this->validate($request, [
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255'],
+            'password' => ['required'],
+        ],
+        [
+            'name.required' => 'Enter your name please.',
+            'email.required' => 'Enter a valid email address please.',
+            'password.required' => 'Please Enter your password to proceed.'
+        ]);
+
+        if (Auth::check()) {
+            
+            $token_user = Admin::find(Auth::user()->id);
+
+            if (!(Hash::check($request->password, $token_user->password))){
+                Session::flash('error', 'Password does not match.');
+                return back();
+            }
+    
+            $token_user->name = $request->name;
+            $token_user->email = $request->email;
+    
+            if ($request->new_password != null) {
+                if ($request->new_password == $request->confirm_password) {
+                    $token_user->password = Hash::make($request->new_password);
+                }
+            }
+            
+            $token_user->save();
+            Session::flash('success', 'Profile updated successfully.');
+            return redirect()->route('admin.profile');
+        }
+
+        Session::flash('error', 'Unauthorised Access Detected!');
+        return redirect()->route('home');
     }
 
     /**

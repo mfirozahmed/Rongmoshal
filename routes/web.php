@@ -76,14 +76,23 @@ Route::prefix('admin')->group(function() {
     Route::post('/login',                         'Auth\AdminLoginController@login')                           ->name('admin.login.submit');
     Route::get('/logout',                         'Auth\AdminLoginController@adminLogout')                     ->name('admin.logout');
 
+
     Route::post('/password/email',                'Auth\AdminForgotPasswordController@sendResetLinkEmail')     ->name('admin.password.email');
     Route::get('/password/reset',                 'Auth\AdminForgotPasswordController@showLinkRequestForm')    ->name('admin.password.request');
     Route::post('/password/reset',                'Auth\AdminResetPasswordController@reset')                   ->name('admin.password.update');
     Route::get('/password/reset/{token}',         'Auth\AdminResetPasswordController@showResetForm')           ->name('admin.password.reset');
-  
+
+
+    Route::get('/profile',                        'AdminController@profile')                                    ->name('admin.profile');
+    Route::get('/profile-update',                 'AdminController@profile_update')                             ->name('admin.profile.update');
+    Route::post('/profile-update',                'AdminController@profile_submit')                             ->name('admin.profile.submit');
+
+
     Route::get('/',                               'AdminController@index')                                     ->name('admin.dashboard');
     Route::get('/dashboard',                      'AdminController@index')                                     ->name('admin.dashboard');
     Route::get('/dashboard/data',                 'AdminController@fetch_data');
+
+
 
     Route::get('/orders',                         'AdminController@orders')                                    ->name('admin.orders');
     Route::get('/orders/{property}',              'AdminController@propertised_orders')                        ->name('admin.properties.orders');
