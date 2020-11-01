@@ -2,6 +2,7 @@
 
 namespace App;
 use Auth;
+use Carbon\Carbon;
 use App\Code;
 use App\User;
 use App\Models\Product;
@@ -108,6 +109,7 @@ class Code
         $user_count = count(User::all());
         $total_items = 0;
         $total_earns = 0;
+        $todays_sale = Order::whereDate('created_at', Carbon::today())->count();
         $users_id = array();
 
         foreach ($orders as $order) {
@@ -122,6 +124,7 @@ class Code
             'user_count' => $user_count,
             'total_items' => $total_items,
             'total_earns' => $total_earns,
+            'todays_sale' => $todays_sale,
             'id_quantity' => $id_quantity,
             'name_quantity' => $name_quantity,
         ]; 
