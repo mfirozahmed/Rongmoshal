@@ -26,10 +26,13 @@ class PageController extends Controller
 
     public function index()
     {
-        $new_items = Product::whereIn('has_value', array(1, 3))->get();
-        $signature_items = Product::whereIn('has_value', array(2, 3))->get();
+        /* $new_items = Product::whereIn('has_value', array(1, 3))->get();
+        $signature_items = Product::whereIn('has_value', array(2, 3))->get(); */
         
         //return $products;
+
+        $new_items = Product::whereIn('top', array(1, 3))->get();
+        $signature_items = Product::whereIn('top', array(2, 3))->get();
         $data = Code::categoryList();
 
         return view('frontend.pages.welcome')->with('new_items', $new_items)->with('signature_items', $signature_items)->with($data);

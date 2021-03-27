@@ -37,7 +37,7 @@ class Cart extends Model
                          ->where('order_id', null)
                          ->get();
         } else 
-            $carts = Cart::where('user_ip', request()->ip())
+            $carts = Cart::where('ip_address', request()->ip())
                          ->where('order_id', null)
                          ->get();
 

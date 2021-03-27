@@ -21,45 +21,45 @@
                         <div class="hero__caption">
                             <h1 data-animation="fadeInLeft" data-delay=".4s" data-duration="2000ms">Select Your New
                                 Perfect Style</h1>
-                            <p data-animation="fadeInLeft" data-delay=".7s" data-duration="2000ms">###</p>
+                            {{-- <p data-animation="fadeInLeft" data-delay=".7s" data-duration="2000ms">###</p> --}}
                             <!-- Hero-btn -->
                             <div class="hero__btn" data-animation="fadeInLeft" data-delay=".8s" data-duration="2000ms">
                                 <a href="{{ route('shop') }}" class="btn hero-btn">Shop Now</a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4 d-none d-sm-block">
+                    {{-- <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4 d-none d-sm-block">
                         <div class="hero__img" data-animation="bounceIn" data-delay=".4s">
                             <img src="{{ asset('frontend/img/hero/test.png') }}" alt="" class=" heartbeat">
-                        </div>
-                    </div>
                 </div>
-            </div>
-        </div>
-        <!-- Single Slider -->
-        <div class="single-slider slider-height d-flex align-items-center slide-bg">
-            <div class="container">
-                <div class="row justify-content-between align-items-center">
-                    <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8">
-                        <div class="hero__caption">
-                            <h1 data-animation="fadeInLeft" data-delay=".4s" data-duration="2000ms">Select Your New
-                                Perfect Style</h1>
-                            <p data-animation="fadeInLeft" data-delay=".7s" data-duration="2000ms">###</p>
-                            <!-- Hero-btn -->
-                            <div class="hero__btn" data-animation="fadeInLeft" data-delay=".8s" data-duration="2000ms">
-                                <a href="industries.html" class="btn hero-btn">Shop Now</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4 d-none d-sm-block">
-                        <div class="hero__img" data-animation="bounceIn" data-delay=".4s">
-                            <img src="{{ asset('frontend/img/hero/test.png') }}" alt="" class=" heartbeat">
-                        </div>
-                    </div>
-                </div>
-            </div>
+            </div> --}}
         </div>
     </div>
+</div>
+<!-- Single Slider -->
+<div class="single-slider slider-height d-flex align-items-center slide-bg">
+    <div class="container">
+        <div class="row justify-content-between align-items-center">
+            <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8">
+                <div class="hero__caption">
+                    <h1 data-animation="fadeInLeft" data-delay=".4s" data-duration="2000ms">Select Your New
+                        Perfect Style</h1>
+                    {{-- <p data-animation="fadeInLeft" data-delay=".7s" data-duration="2000ms">###</p> --}}
+                    <!-- Hero-btn -->
+                    <div class="hero__btn" data-animation="fadeInLeft" data-delay=".8s" data-duration="2000ms">
+                        <a href="industries.html" class="btn hero-btn">Shop Now</a>
+                    </div>
+                </div>
+            </div>
+            {{-- <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4 d-none d-sm-block">
+                <div class="hero__img" data-animation="bounceIn" data-delay=".4s">
+                    <img src="{{ asset('frontend/img/hero/test.png') }}" alt="" class=" heartbeat">
+        </div>
+    </div> --}}
+</div>
+</div>
+</div>
+</div>
 </div>
 <!-- slider Area End-->
 <!-- ? New Product Start -->
@@ -78,7 +78,7 @@
             <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
                 <div class="single-new-pro mb-30 text-center">
                     <div class="product-img">
-                        <img src="/storage/images/{{ $item->image }}" alt="">
+                        <img src="/storage/images/{{ $item->image }}" alt="" width="100px" height="400px">
                     </div>
                     <div class="product-caption">
                         <h3><a href="{{ route('specific_product', $item->id) }}">{{ $item->name}}</a></h3>
@@ -136,7 +136,7 @@
             <div class="col-xl-7 col-lg-8 col-md-10">
                 <div class="section-tittle mb-70 text-center">
                     <h2>Signature Items</h2>
-                    <p>##</p>
+                    {{-- <p>##</p> --}}
                 </div>
             </div>
         </div>
@@ -145,7 +145,7 @@
             <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
                 <div class="single-popular-items mb-50 text-center">
                     <div class="popular-img">
-                        <img src="/storage/images/{{ $item->image }}" alt="">
+                        <img src="/storage/images/{{ $item->image }}" alt="" width="100px" height="400px">
                         <form method="POST" action="{{ route('cart.store') }}">
                             @csrf
                             <div class="img-cap" onclick="addtoCart({{ $item->id }})">

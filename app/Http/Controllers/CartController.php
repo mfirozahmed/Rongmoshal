@@ -39,7 +39,7 @@ class CartController extends Controller
                      ->where('order_id', null)
                      ->get();
         } else
-            $carts = Cart::where('user_ip', request()->ip())->where('order_id', NULL)->get();
+            $carts = Cart::where('ip_address', request()->ip())->where('order_id', NULL)->get();
 
         return view('frontend.user.cart.show')->with('carts', $carts)->with($data);
     }
@@ -70,14 +70,14 @@ class CartController extends Controller
             }
         } else {
             
-            $cart = Cart::where('user_ip', request()->ip())
+            $cart = Cart::where('ip_address', request()->ip())
                         ->where('product_id', $request->product_id)
                         ->where('order_id', null)
                         ->first();
 
             if (is_null($cart)) {
                 $cart = new Cart();
-                $cart->user_ip = request()->ip();
+                $cart->ip_address = request()->ip();
                 $cart->product_id = $request->product_id;
                 
                 $cart->save();
@@ -111,14 +111,14 @@ class CartController extends Controller
             $cart->save();
         } else {
             
-            $cart = Cart::where('user_ip', request()->ip())
+            $cart = Cart::where('ip_address', request()->ip())
                         ->where('product_id', $request->product_id)
                         ->where('order_id', null)
                         ->first();
 
             if (is_null($cart)) {
                 $cart = new Cart();
-                $cart->user_ip = request()->ip();
+                $cart->ip_address = request()->ip();
                 $cart->product_id = $request->product_id;
                 $cart->quantity = $request->quantity;
                 
@@ -140,7 +140,7 @@ class CartController extends Controller
                          ->where('order_id', null)
                          ->get();
         } else
-            $carts = Cart::where('user_ip', request()->ip())
+            $carts = Cart::where('ip_address', request()->ip())
                          ->where('order_id', null)
                          ->get();
 
@@ -165,7 +165,7 @@ class CartController extends Controller
                          ->where('order_id', null)
                          ->first();
         } else
-            $cart = Cart::where('user_ip', request()->ip())
+            $cart = Cart::where('ip_address', request()->ip())
                          ->where('product_id', $pid)
                          ->where('order_id', null)
                          ->first();
@@ -200,7 +200,7 @@ class CartController extends Controller
                          ->where('order_id', null)
                          ->get();
         } else
-            $carts = Cart::where('user_ip', request()->ip())
+            $carts = Cart::where('ip_address', request()->ip())
                          ->where('order_id', null)
                          ->get();
 
@@ -235,7 +235,7 @@ class CartController extends Controller
                 $order->shipping_address = $token_user->address;
             }
         } else {
-            $order->user_ip = request()->ip();
+            $order->ip_address = request()->ip();
             $this->validate($request, [
                 'billing_name' => 'required',
                 'billing_number' => 'required',
@@ -312,7 +312,7 @@ class CartController extends Controller
                         ->where('order_id', null)
                         ->get();
         } else {
-            $carts = Cart::where('user_ip', request()->ip())
+            $carts = Cart::where('ip_address', request()->ip())
                         ->where('order_id', null)
                         ->get();
         }
